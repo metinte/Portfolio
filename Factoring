@@ -1,0 +1,29 @@
+/**
+ * Created by metintoksoz-exley on 1/21/16.
+ */
+import java.util.Scanner;
+public class FactorIntegers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        do {
+
+            System.out.println("Enter a positive integer:");
+            int numberToFactor = scanner.nextInt();
+            System.out.println("Factoring" + numberToFactor);
+            for (int potentialFactor = 1;
+                 potentialFactor <= Math.sqrt(numberToFactor);
+                 potentialFactor++) {
+                if (numberToFactor % potentialFactor == 0) {
+                    //then it reall is a factor
+                    System.out.print(potentialFactor + "");
+                    System.out.println(numberToFactor / potentialFactor);
+                }
+
+            }
+
+            System.out.println("Do again? (true/false)");
+        } while (scanner.nextBoolean());
+
+    }
+}
+
